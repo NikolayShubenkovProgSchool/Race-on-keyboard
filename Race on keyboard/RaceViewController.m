@@ -40,21 +40,22 @@
     NSMutableArray *raceTextMutable = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i != lengthOfTextView; i++) {
         [raceTextMutable addObject:[self.textView.text substringWithRange:NSMakeRange(i, 1)]];
+        
         // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
+        // попробовать через текстфилд с плэйсхолдером и пробелами, тогда цвет можно будет увести
+        
         if ([[self.textView.text substringWithRange:NSMakeRange(i, 1)] isEqualToString:@"i"]) {
             self.textView.textColor = [UIColor blueColor];
         }
         NSLog(@"%ld work", i);
     }
-
+    
     NSString * result = [[raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
     self.textView.text = result;
-
     
     NSLog(@"%@", result);
     
     NSLog(@"%@", raceTextMutable);
-//    NSAttributedString; UIColor
 }
 
 
