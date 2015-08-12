@@ -15,6 +15,7 @@
 @property (assign, nonatomic) NSInteger countOfTouchOnKeyboard;
 @property (nonatomic) NSMutableArray *raceTextMutable;
 @property (nonatomic) NSMutableAttributedString *now;
+@property (nonatomic) NSRange range;
 
 
 @end
@@ -58,14 +59,16 @@
 }
 
 - (IBAction)touchOnenterRaceTextFieldEnded:(id)sender {
-
+    
     NSLog(@"touch ended on keyboard %ld", self.countOfTouchOnKeyboard);
     
     // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
+    self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
     
-    if ([self.enterRaceTextField.text isEqual:[self.textView.text substringWithRange:NSMakeRange(0+self.countOfTouchOnKeyboard, 1 + self.countOfTouchOnKeyboard)]]) {
-
-        self.textView.textColor =[UIColor yellowColor];
+    if ([self.enterRaceTextField.text isEqual:[self.textView.text substringWithRange:self.range]]) {
+        [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:self.range];
+        self.textView.attributedText = self.now;
+        //        self.textView.textColor =[UIColor yellowColor];
         self.enterRaceTextField.text = @"";
         
     }
