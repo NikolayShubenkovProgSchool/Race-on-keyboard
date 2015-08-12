@@ -52,25 +52,28 @@
     for (NSInteger i = 0; i != lengthOfTextView; i++) {
         
         [self.raceTextMutable addObject:[text substringWithRange:NSMakeRange(i, 1)]];
-        NSLog(@"%d work", i);
+        NSLog(@"%ld work", (long)i);
     }
     // показывает массив в виде нормальной строик без лишних символов
     NSString * result = [[self.raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
-    //раскрашивает цвет букв и фона на определенном range
+
     self.now = [[NSMutableAttributedString alloc]initWithString:result];
-//    [self.now addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,5)];
-//    [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(4, 6)];
+
     self.textView.attributedText = self.now;
     NSLog(@"%@", result);
     
 }
 
-- (IBAction)touchOnenterRaceTextFieldEnded:(id)sender {
+- (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
-    NSLog(@"touch ended on keyboard %d", self.countOfTouchOnKeyboard);
+    NSLog(@"touch ended on keyboard %ld", (long)self.countOfTouchOnKeyboard);
     
     // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
+
+    if (self.progressRace.value == self.progressRace.maximumValue) {
+        return;
+    }
     
     if ([self.enterRaceTextField.text isEqual:[self.textView.text substringWithRange:self.range]]) {
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:self.range];
@@ -85,7 +88,6 @@
         //        self.textView.textColor =[UIColor yellowColor];
         self.enterRaceTextField.text = @"";
     }
-
 }
 
 
