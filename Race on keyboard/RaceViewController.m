@@ -70,6 +70,7 @@
         self.textView.attributedText = self.now;
         //        self.textView.textColor =[UIColor yellowColor];
         self.enterRaceTextField.text = @"";
+            self.countOfTouchOnKeyboard++;
     } else {
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:self.range];
         self.textView.attributedText = self.now;
@@ -77,7 +78,6 @@
         self.enterRaceTextField.text = @"";
     }
 
-    self.countOfTouchOnKeyboard++;
 }
 
 
