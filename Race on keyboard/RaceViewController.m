@@ -17,6 +17,8 @@
 @property (nonatomic) NSMutableAttributedString *now;
 @property (nonatomic) NSRange range;
 
+@property (weak, nonatomic) IBOutlet UISlider *progressRace;
+
 
 @end
 
@@ -28,6 +30,8 @@
     [self.enterRaceTextField becomeFirstResponder];
     self.textView.textColor = [UIColor redColor];
     [self makeArrayFromString];
+    self.progressRace.value = 0;
+    
 }
 
 
@@ -36,16 +40,19 @@
     [self setup];
 }
 
-
+-(void)makeProgressBySlider{
+    self.progressRace.value++;
+}
 
 -(void)makeArrayFromString{
     NSString *text = @"One two three four";
     NSInteger lengthOfTextView = text.length;
+    self.progressRace.maximumValue = text.length;
     self.raceTextMutable = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i != lengthOfTextView; i++) {
         
         [self.raceTextMutable addObject:[text substringWithRange:NSMakeRange(i, 1)]];
-        NSLog(@"%ld work", i);
+        NSLog(@"%d work", i);
     }
     // показывает массив в виде нормальной строик без лишних символов
     NSString * result = [[self.raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
@@ -60,7 +67,7 @@
 
 - (IBAction)touchOnenterRaceTextFieldEnded:(id)sender {
     
-    NSLog(@"touch ended on keyboard %ld", self.countOfTouchOnKeyboard);
+    NSLog(@"touch ended on keyboard %d", self.countOfTouchOnKeyboard);
     
     // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
@@ -71,6 +78,7 @@
         //        self.textView.textColor =[UIColor yellowColor];
         self.enterRaceTextField.text = @"";
             self.countOfTouchOnKeyboard++;
+        [self makeProgressBySlider];
     } else {
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:self.range];
         self.textView.attributedText = self.now;
