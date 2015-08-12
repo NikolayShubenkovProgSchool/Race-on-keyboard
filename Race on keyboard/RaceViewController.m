@@ -47,8 +47,9 @@
     NSString * result = [[raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
     NSMutableAttributedString *now = [[NSMutableAttributedString alloc]initWithString:result];
     [now addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,5)];
+    [now addAttribute:NSBackgroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(4, 6)];
 //    [now setTextColor:[UIColor blueColor]];
-    self.textView.text = result;
+    self.textView.attributedText = now;
     NSLog(@"%@", result);
     
 }
