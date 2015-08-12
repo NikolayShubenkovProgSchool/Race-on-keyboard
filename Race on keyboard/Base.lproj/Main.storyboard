@@ -20,6 +20,9 @@
                                 <rect key="frame" x="21" y="216" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="touchOnenterRaceTextFieldEnded:" destination="BYZ-38-t0r" eventType="editingChanged" id="T1i-BS-vvg"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="One two three" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
                                 <rect key="frame" x="16" y="107" width="288" height="139"/>

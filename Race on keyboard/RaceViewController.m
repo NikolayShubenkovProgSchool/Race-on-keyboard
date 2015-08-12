@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITextField *enterRaceTextField;
+@property (assign, nonatomic) NSInteger countOfTouchOnKeyboard;
 
 @end
 
@@ -22,7 +23,7 @@
 -(void)setup{
     [self.enterRaceTextField becomeFirstResponder];
     self.textView.textColor = [UIColor redColor];
-    [self makeArrayFromTextView];
+    [self makeArrayFromString];
 }
 
 
@@ -34,21 +35,19 @@
 
 
 
--(void)makeArrayFromTextView{
-    
-    NSInteger lengthOfTextView = self.textView.text.length;
+-(void)makeArrayFromString{
+    NSString *text = @"One two three four";
+    NSInteger lengthOfTextView = text.length;
     NSMutableArray *raceTextMutable = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i != lengthOfTextView; i++) {
-        [raceTextMutable addObject:[self.textView.text substringWithRange:NSMakeRange(i, 1)]];
-        
-        // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
-        // попробовать через текстфилд с плэйсхолдером и пробелами, тогда цвет можно будет увести
-        
-        if ([[self.textView.text substringWithRange:NSMakeRange(i, 1)] isEqualToString:@"i"]) {
-            self.textView.textColor = [UIColor blueColor];
-        }
+//        [raceTextMutable addObject:[self.textView.text substringWithRange:NSMakeRange(i, 1)]];
+        [raceTextMutable addObject:[text substringWithRange:NSMakeRange(i, 1)]];
+     
         NSLog(@"%ld work", i);
     }
+    // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
+    // попробовать через текстфилд с плэйсхолдером и пробелами, тогда цвет можно будет увести
+
     
     NSString * result = [[raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
     self.textView.text = result;
@@ -58,7 +57,16 @@
     NSLog(@"%@", raceTextMutable);
 }
 
+- (IBAction)touchOnenterRaceTextFieldEnded:(id)sender {
 
+    NSLog(@"touch ended on keyboard %ld", self.countOfTouchOnKeyboard);
+    // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
+    if ([self.enterRaceTextField.text isEqual:[self.textView.text substringWithRange:NSMakeRange(0, 1)]]) {
+        self.textView.textColor =[UIColor yellowColor];
+        
+    }
+    self.countOfTouchOnKeyboard++;
+}
 
 
 @end
