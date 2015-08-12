@@ -24,15 +24,15 @@
                                     <action selector="touchOnEnterRaceTextFieldEnded:" destination="BYZ-38-t0r" eventType="editingChanged" id="meF-V9-Xfi"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="One two three" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
-                                <rect key="frame" x="16" y="72" width="288" height="174"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raG-Kj-P8D">
+                                <rect key="frame" x="14" y="72" width="292" height="31"/>
+                            </slider>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="One two three" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
+                                <rect key="frame" x="16" y="110" width="288" height="174"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raG-Kj-P8D">
-                                <rect key="frame" x="14" y="254" width="292" height="31"/>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
