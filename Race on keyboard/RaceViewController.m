@@ -16,9 +16,7 @@
 @property (nonatomic) NSMutableArray *raceTextMutable;
 @property (nonatomic) NSMutableAttributedString *now;
 @property (nonatomic) NSRange range;
-
 @property (weak, nonatomic) IBOutlet UISlider *progressRace;
-
 
 @end
 
@@ -41,7 +39,9 @@
 #pragma mark - slider progress count
 
 -(void)makeProgressBySlider{
-    self.progressRace.value++;
+    [UIView animateWithDuration:1.0 animations:^{
+        [self.progressRace setValue:self.countOfTouchOnKeyboard animated:YES];
+    }];
 }
 
 #pragma mark - array with text to textField
