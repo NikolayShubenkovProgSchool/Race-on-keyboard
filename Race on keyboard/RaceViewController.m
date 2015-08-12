@@ -39,6 +39,9 @@
 #pragma mark - slider progress count
 
 -(void)makeProgressBySlider{
+    if (self.progressRace.value == self.progressRace.maximumValue - 1) {
+                self.textView.text = @"You win!";
+    }
     [UIView animateWithDuration:1.0 animations:^{
         [self.progressRace setValue:self.countOfTouchOnKeyboard animated:YES];
     }];
