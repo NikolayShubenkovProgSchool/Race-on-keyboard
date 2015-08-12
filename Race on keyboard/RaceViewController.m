@@ -51,8 +51,8 @@
     NSString * result = [[self.raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
     //раскрашивает цвет букв и фона на определенном range
     self.now = [[NSMutableAttributedString alloc]initWithString:result];
-    [self.now addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,5)];
-    [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(4, 6)];
+//    [self.now addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,5)];
+//    [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(4, 6)];
     self.textView.attributedText = self.now;
     NSLog(@"%@", result);
     
@@ -70,8 +70,13 @@
         self.textView.attributedText = self.now;
         //        self.textView.textColor =[UIColor yellowColor];
         self.enterRaceTextField.text = @"";
-        
+    } else {
+        [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:self.range];
+        self.textView.attributedText = self.now;
+        //        self.textView.textColor =[UIColor yellowColor];
+        self.enterRaceTextField.text = @"";
     }
+
     self.countOfTouchOnKeyboard++;
 }
 
