@@ -30,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
-    // Do any additional setup after loading the view.
 }
 
 
@@ -40,25 +39,22 @@
     NSInteger lengthOfTextView = text.length;
     NSMutableArray *raceTextMutable = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i != lengthOfTextView; i++) {
-//        [raceTextMutable addObject:[self.textView.text substringWithRange:NSMakeRange(i, 1)]];
+        
         [raceTextMutable addObject:[text substringWithRange:NSMakeRange(i, 1)]];
-     
         NSLog(@"%ld work", i);
     }
-    // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
-    // попробовать через текстфилд с плэйсхолдером и пробелами, тогда цвет можно будет увести
-
-    
+    // показывает массив в виде нормальной строик без лишних символов
     NSString * result = [[raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
+    NSMutableAttributedString *now = [[NSMutableAttributedString alloc]initWithString:result];
+    [now addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,5)];
+//    [now setTextColor:[UIColor blueColor]];
     self.textView.text = result;
-    
     NSLog(@"%@", result);
     
-    NSLog(@"%@", raceTextMutable);
 }
 
 - (IBAction)touchOnenterRaceTextFieldEnded:(id)sender {
-
+    
     NSLog(@"touch ended on keyboard %ld", self.countOfTouchOnKeyboard);
     // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
     if ([self.enterRaceTextField.text isEqual:[self.textView.text substringWithRange:NSMakeRange(0, 1)]]) {
