@@ -7,6 +7,7 @@
 //
 
 #import "RaceViewController.h"
+#import "Race.h"
 
 @interface RaceViewController ()
 
@@ -25,10 +26,14 @@
 #pragma mark - setup
 
 -(void)setup{
+    Race *race = [[Race alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
     self.textView.textColor = [UIColor redColor];
     [self makeArrayFromString];
     self.progressRace.value = 0;
+    
+    // проверка создания класса Race]
+    [race test:self.textView];
 }
 
 - (void)viewDidLoad {

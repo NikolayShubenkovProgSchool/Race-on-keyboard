@@ -15,6 +15,7 @@
 		70BF2EA91B7A294D00831C6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70BF2EA71B7A294D00831C6C /* LaunchScreen.xib */; };
 		70BF2EB51B7A294E00831C6C /* Race_on_keyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2EB41B7A294E00831C6C /* Race_on_keyboardTests.m */; };
 		70BF2EC01B7A2B9400831C6C /* RaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2EBF1B7A2B9400831C6C /* RaceViewController.m */; };
+		70BF2EC31B7D061800831C6C /* Race.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2EC21B7D061800831C6C /* Race.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		70BF2EB41B7A294E00831C6C /* Race_on_keyboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Race_on_keyboardTests.m; sourceTree = "<group>"; };
 		70BF2EBE1B7A2B9400831C6C /* RaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceViewController.h; sourceTree = "<group>"; };
 		70BF2EBF1B7A2B9400831C6C /* RaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceViewController.m; sourceTree = "<group>"; };
+		70BF2EC11B7D061800831C6C /* Race.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Race.h; sourceTree = "<group>"; };
+		70BF2EC21B7D061800831C6C /* Race.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Race.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				70BF2EA21B7A294D00831C6C /* Main.storyboard */,
 				70BF2EBE1B7A2B9400831C6C /* RaceViewController.h */,
 				70BF2EBF1B7A2B9400831C6C /* RaceViewController.m */,
+				70BF2EC11B7D061800831C6C /* Race.h */,
+				70BF2EC21B7D061800831C6C /* Race.m */,
 				70BF2EA51B7A294D00831C6C /* Images.xcassets */,
 				70BF2EA71B7A294D00831C6C /* LaunchScreen.xib */,
 				70BF2E981B7A294D00831C6C /* Supporting Files */,
@@ -232,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BF2EC31B7D061800831C6C /* Race.m in Sources */,
 				70BF2EA11B7A294D00831C6C /* ViewController.m in Sources */,
 				70BF2EC01B7A2B9400831C6C /* RaceViewController.m in Sources */,
 				70BF2E9E1B7A294D00831C6C /* AppDelegate.m in Sources */,
