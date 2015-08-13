@@ -66,7 +66,7 @@
     // показывает массив в виде нормальной строик без лишних символов
     NSString * result = [[self.raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
     
-    self.now = [[NSMutableAttributedString alloc]initWithString:result];
+    self.now = [[NSMutableAttributedString alloc]initWithString:text];
     
     self.textView.attributedText = self.now;
     NSLog(@"%@", result);
