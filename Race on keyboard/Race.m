@@ -7,6 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "Race.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface Race ()
 
@@ -67,6 +68,8 @@
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:self.range];
         textView.attributedText = self.now;
         textField.text = @"";
+        //вибрация при неправильном вводе буквы
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     }
 }
 
