@@ -13,5 +13,10 @@
 -(void)test:(UITextView *)textField;
 -(void)testNumberTwo:(UITextView *)textView;
 -(void)makeProgressBySlider:(UISlider *)slider and:(UITextView *)textView;
+-(void)edittingLetter:(UISlider *)slider and:(UITextView *)textView :(UITextField *)textField;
+
+@property (assign, nonatomic) NSInteger countOfTouchOnKeyboard;
+@property (nonatomic) NSMutableAttributedString *now;
+
 
 @end
