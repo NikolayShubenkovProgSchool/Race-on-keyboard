@@ -11,5 +11,6 @@
 @interface Race : UIView
 
 -(void)test:(UITextView *)textField;
+-(void)testNumberTwo:(UITextView *)textView;
 
 @end

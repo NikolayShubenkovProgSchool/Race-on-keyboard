@@ -18,6 +18,7 @@
 @property (nonatomic) NSMutableAttributedString *now;
 @property (nonatomic) NSRange range;
 @property (weak, nonatomic) IBOutlet UISlider *progressRace;
+@property (nonatomic) Race* raceProperty;
 
 @end
 
@@ -26,14 +27,14 @@
 #pragma mark - setup
 
 -(void)setup{
-    Race *race = [[Race alloc] init];
+    self.raceProperty = [[Race alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
     self.textView.textColor = [UIColor redColor];
     [self makeArrayFromString];
     self.progressRace.value = 0;
     
     // проверка создания класса Race]
-    [race test:self.textView];
+    [self.raceProperty test:self.textView];
 }
 
 - (void)viewDidLoad {
@@ -66,7 +67,7 @@
     // показывает массив в виде нормальной строик без лишних символов
     NSString * result = [[self.raceTextMutable valueForKey:@"description"] componentsJoinedByString:@""];
     
-    self.now = [[NSMutableAttributedString alloc]initWithString:text];
+    self.now = [[NSMutableAttributedString alloc]initWithString:result];
     
     self.textView.attributedText = self.now;
     NSLog(@"%@", result);
