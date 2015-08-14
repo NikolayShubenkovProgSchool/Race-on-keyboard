@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "sliderCar.png"
+      "filename" : "car7.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "sliderCar@2x.png"
+      "filename" : "car7@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "sliderCar@3x.png"
+      "filename" : "car7@3x.png"
     }
   ],
   "info" : {

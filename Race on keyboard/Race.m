@@ -37,6 +37,10 @@
     
 }
 
+#pragma mark - pictures of car into slider
+
+
+
 #pragma mark - slider progress count
 
 -(void)makeProgressBySlider:(UISlider *)slider and:(UITextView *)textView{
