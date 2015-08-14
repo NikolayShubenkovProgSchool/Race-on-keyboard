@@ -24,14 +24,8 @@
                                     <action selector="touchOnEnterRaceTextFieldEnded:" destination="BYZ-38-t0r" eventType="editingChanged" id="meF-V9-Xfi"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="textView" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
-                                <rect key="frame" x="16" y="216" width="288" height="174"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc">
                                 <rect key="frame" x="14" y="122" width="292" height="31"/>
-                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-af-FjE">
                                 <rect key="frame" x="14" y="172" width="292" height="31"/>
@@ -39,10 +33,12 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raG-Kj-P8D">
                                 <rect key="frame" x="14" y="72" width="292" height="31"/>
                                 <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
-                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </slider>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="textView" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
+                                <rect key="frame" x="16" y="210" width="288" height="119"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
