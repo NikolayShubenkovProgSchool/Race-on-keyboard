@@ -44,14 +44,14 @@
 
 #pragma mark - slider progress count
 
--(void)makeProgressBySlider{
-    if (self.progressRace.value == self.progressRace.maximumValue - 1) {
-                self.textView.text = @"You win!";
-    }
-    [UIView animateWithDuration:1.0 animations:^{
-        [self.progressRace setValue:self.countOfTouchOnKeyboard animated:YES];
-    }];
-}
+//-(void)makeProgressBySlider{
+//    if (self.progressRace.value == self.progressRace.maximumValue - 1) {
+//                self.textView.text = @"You win!";
+//    }
+//    [UIView animateWithDuration:1.0 animations:^{
+//        [self.progressRace setValue:self.countOfTouchOnKeyboard animated:YES];
+//    }];
+//}
 
 #pragma mark - array with text to textField
 
@@ -93,7 +93,7 @@
         //        self.textView.textColor =[UIColor yellowColor];
         self.enterRaceTextField.text = @"";
         self.countOfTouchOnKeyboard++;
-        [self makeProgressBySlider];
+        [self.raceProperty makeProgressBySlider:self.progressRace and:self.textView];
     } else {
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:self.range];
         self.textView.attributedText = self.now;

@@ -12,5 +12,6 @@
 
 -(void)test:(UITextView *)textField;
 -(void)testNumberTwo:(UITextView *)textView;
+-(void)makeProgressBySlider:(UISlider *)slider and:(UITextView *)textView;
 
 @end
