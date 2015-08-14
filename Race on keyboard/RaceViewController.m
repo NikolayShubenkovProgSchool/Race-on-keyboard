@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITextField *enterRaceTextField;
 @property (weak, nonatomic) IBOutlet UISlider *progressRace;
+@property (weak, nonatomic) IBOutlet UISlider *opponentSliderOne;
+@property (weak, nonatomic) IBOutlet UISlider *opponentSliderTwo;
+
 @property (nonatomic) Race* raceProperty;
 
 @end
@@ -23,14 +26,29 @@
 #pragma mark - setup
 
 -(void)setup{
-    
     self.raceProperty = [[Race alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
+    [self setupMoreSlider];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.progressRace];
-    [self.progressRace setThumbImage:[UIImage imageNamed:@"car8.png"] forState:UIControlStateNormal];
-    self.progressRace.maximumTrackTintColor = [UIColor clearColor];
-    self.progressRace.userInteractionEnabled = NO;
     self.progressRace.value = 0;
+    
+}
+
+-(void)setupSider:(UISlider *)slider{
+    [slider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"car%d.png", arc4random_uniform(48) + 1]] forState:UIControlStateNormal];
+    slider.minimumTrackTintColor = [UIColor clearColor];
+    slider.maximumTrackTintColor = [UIColor clearColor];
+    slider.userInteractionEnabled = NO;
+    slider.value = 0;
+}
+
+-(void)setupMoreSlider{
+    
+    NSArray *sliders = [[NSArray alloc] initWithObjects:self.progressRace, self.opponentSliderOne, self.opponentSliderTwo, nil];
+    
+    for (id n in sliders) {
+        [self setupSider:n];
+    }
     
 }
 

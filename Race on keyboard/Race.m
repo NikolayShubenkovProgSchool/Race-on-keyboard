@@ -7,6 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "Race.h"
+#import "Text.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface Race ()
@@ -26,8 +27,9 @@
     UIFont *font = [UIFont fontWithName:@"Palatino-Roman" size:19.0];
     NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
                                                                 forKey:NSFontAttributeName];
-    // добавляем текст в игру, надо создать класс "text"]
-    NSString *text = @"Трудно, даже невозможно описать, как зарождаются разные слухи; они подобны ветру, который возникает неизвестно откуда и уносится неизвестно куда.";
+    Text *makeText = [[Text alloc] init];
+    NSString *text = [makeText russianText];
+//    @"Трудно, даже невозможно описать, как зарождаются разные слухи.";
     slider.maximumValue = text.length;
     self.now = [[NSMutableAttributedString alloc]initWithString:text attributes:attrsDictionary ];
     textView.font = [UIFont systemFontOfSize:20];

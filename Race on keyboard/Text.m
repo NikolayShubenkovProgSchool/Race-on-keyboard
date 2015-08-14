@@ -10,9 +10,12 @@
 
 @implementation Text
 
-//    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"odin", @"1", @"dva", @"2", nil];
-//    NSString *string = [NSString stringWithFormat:@"%@", [dictionary objectForKey:@"2"]];
-//    NSLog(@"%@", string);
+-(NSString *)russianText{
+    
+    NSArray *text = [NSArray arrayWithObjects:@"Трудно, даже невозможно описать, как зарождаются разные слухи.", nil];
+    
+    return [text objectAtIndex:arc4random_uniform(1)];
+}
 
 
 @end
