@@ -10,22 +10,26 @@
 
 @interface Race ()
 
-@property (nonatomic) NSRange range;
-
-
+@property (nonatomic) NSRange                   range;
+@property (nonatomic) NSMutableAttributedString *now;
+@property (assign, nonatomic) NSInteger         countOfTouchOnKeyboard;
 
 @end
 
 @implementation Race
 
-#pragma mark - testing class
+#pragma mark - setup tex in race
 
--(void)test:(UITextView *)textView{
-    textView.textColor = [UIColor purpleColor];
-}
-
--(void)testNumberTwo:(UITextView *)textView{
-    textView.backgroundColor = [UIColor yellowColor];
+-(void)setUpTextInRace:(UITextView *)textView AndMakeMaxValueOfSlider:(UISlider *)slider{
+    
+    // добавляем текст в игру, надо создать класс "text"]
+    NSString *text = @"One two three four";
+    slider.maximumValue = text.length;
+    self.now = [[NSMutableAttributedString alloc]initWithString:text];
+    textView.attributedText = self.now ;
+    
+    NSLog(@"%@", text);
+    
 }
 
 #pragma mark - slider progress count
@@ -42,8 +46,6 @@
 -(void)edittingLetter:(UISlider *)slider and:(UITextView *)textView :(UITextField *)textField{
     
     NSLog(@"touch ended on keyboard %ld", (long)self.countOfTouchOnKeyboard);
-    
-    // с помощью строки приведенной ниже, можно через if проверять текст в массиве и ставить цвет
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
     
     if (slider.value == slider.maximumValue) {
@@ -53,19 +55,15 @@
     if ([textField.text isEqual:[textView.text substringWithRange:self.range]]) {
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:self.range];
         textView.attributedText = self.now;
-        //        self.textView.textColor =[UIColor yellowColor];
         textField.text = @"";
         self.countOfTouchOnKeyboard++;
         [self makeProgressBySlider:slider and:textView];
     } else {
         [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor redColor] range:self.range];
         textView.attributedText = self.now;
-        //        self.textView.textColor =[UIColor yellowColor];
         textField.text = @"";
     }
 }
-
-
 
 
 @end
