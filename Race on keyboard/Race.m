@@ -5,7 +5,7 @@
 //  Created by Semen on 13.08.15.
 //  Copyright (c) 2015 Semen Matsepura. All rights reserved.
 //
-
+#import <Foundation/Foundation.h>
 #import "Race.h"
 
 @interface Race ()
@@ -20,12 +20,16 @@
 
 #pragma mark - setup tex in race
 
+
 -(void)setUpTextInRace:(UITextView *)textView AndMakeMaxValueOfSlider:(UISlider *)slider{
-    
+    UIFont *font = [UIFont fontWithName:@"Palatino-Roman" size:19.0];
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
+                                                                forKey:NSFontAttributeName];
     // добавляем текст в игру, надо создать класс "text"]
-    NSString *text = @"One two three four";
+    NSString *text = @"Трудно, даже невозможно описать, как зарождаются разные слухи; они подобны ветру, который возникает неизвестно откуда и уносится неизвестно куда.";
     slider.maximumValue = text.length;
-    self.now = [[NSMutableAttributedString alloc]initWithString:text];
+    self.now = [[NSMutableAttributedString alloc]initWithString:text attributes:attrsDictionary ];
+    textView.font = [UIFont systemFontOfSize:20];
     textView.attributedText = self.now ;
     
     NSLog(@"%@", text);
@@ -47,6 +51,7 @@
     
     NSLog(@"touch ended on keyboard %ld", (long)self.countOfTouchOnKeyboard);
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);
+    
     
     if (slider.value == slider.maximumValue) {
         return;

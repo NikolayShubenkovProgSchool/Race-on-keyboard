@@ -27,6 +27,7 @@
     self.raceProperty = [[Race alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.progressRace];
+    [self.progressRace setThumbImage:[UIImage imageNamed:@"car8.png"] forState:UIControlStateNormal];
     self.progressRace.value = 0;
     
 }
