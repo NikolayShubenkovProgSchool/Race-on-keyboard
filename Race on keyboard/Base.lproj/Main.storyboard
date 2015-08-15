@@ -35,7 +35,7 @@
                                 <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
                             </slider>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="textView" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
-                                <rect key="frame" x="16" y="210" width="288" height="119"/>
+                                <rect key="frame" x="16" y="216" width="288" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>

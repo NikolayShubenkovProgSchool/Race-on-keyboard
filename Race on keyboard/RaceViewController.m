@@ -8,6 +8,7 @@
 
 #import "RaceViewController.h"
 #import "Race.h"
+#import "CarsChoiseAndColors.h"
 
 @interface RaceViewController ()
 
@@ -16,14 +17,9 @@
 @property (weak, nonatomic) IBOutlet UISlider *progressRace;
 @property (weak, nonatomic) IBOutlet UISlider *opponentSliderOne;
 @property (weak, nonatomic) IBOutlet UISlider *opponentSliderTwo;
-@property (assign , nonatomic) NSInteger numberOfCar;
-
-//проверка, чтобы не попались одинаковые машинки
-@property (assign , nonatomic) NSInteger checkRepeatNumberOfCar;
-@property (assign , nonatomic) NSInteger checkRepeatNumberOfCarTwice;
-@property (assign, nonatomic) NSInteger checkAboutRepeat;
 
 @property (nonatomic) Race* raceProperty;
+@property (nonatomic) CarsChoiseAndColors* makeCar;
 
 @end
 
@@ -33,6 +29,7 @@
 
 -(void)setup{
     self.raceProperty = [[Race alloc] init];
+    self.makeCar = [[CarsChoiseAndColors alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
     self.progressRace.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.7 alpha:0.03];
     [self setupMoreSlider];
@@ -42,29 +39,19 @@
 }
 
 -(void)setupSider:(UISlider *)slider{
-    //проверка, чтобы не попались одинаковые машинки
-    self.numberOfCar = arc4random_uniform(48) + 1;
-    NSLog(@"random%ld", (long)self.numberOfCar);
-    if (self.numberOfCar != self.checkRepeatNumberOfCar && self.numberOfCar != self.checkRepeatNumberOfCarTwice) {
-        [slider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar]] forState:UIControlStateNormal];
-        self.checkRepeatNumberOfCar = self.numberOfCar;
-        if (self.checkAboutRepeat < 1) {
-            self.checkAboutRepeat++;
-            self.checkRepeatNumberOfCarTwice = self.numberOfCar;
-        }
-    }else{
-        [self setupSider:slider];
-    }
+
+    [self.makeCar changeCarsColor:slider];
     slider.minimumTrackTintColor = [UIColor clearColor];
     slider.maximumTrackTintColor = [UIColor clearColor];
     slider.userInteractionEnabled = NO;
     slider.value = 0;
+    
 }
 
 -(void)setupMoreSlider{
     
     NSArray *sliders = [[NSArray alloc] initWithObjects:self.progressRace, self.opponentSliderOne, self.opponentSliderTwo, nil];
-    
+
     for (id n in sliders) {
         [self setupSider:n];
     }
