@@ -26,6 +26,9 @@
 @implementation RaceViewController
 
 #pragma mark - setup
+- (IBAction)restart:(id)sender {
+    [self setup];
+}
 
 -(void)setup{
     self.raceProperty = [[Race alloc] init];
@@ -41,7 +44,6 @@
 -(void)setupSider:(UISlider *)slider{
 
     NSLog(@"setup");
-    slider.tintColor = [UIColor redColor];
     slider.minimumTrackTintColor = [UIColor clearColor];
     slider.maximumTrackTintColor = [UIColor clearColor];
     slider.userInteractionEnabled = NO;

@@ -23,7 +23,7 @@
     
     UIImageView *imageView = [UIImageView new];
     
-    self.numberOfCar = arc4random_uniform(10) + 1;
+    self.numberOfCar = arc4random_uniform(3) + 1;
     NSLog(@"random%ld", (long)self.numberOfCar);
     
     // проверка на совпадение 1 и 2 машины
@@ -34,9 +34,9 @@
         imageView = [[UIImageView alloc] initWithImage:tintedImage];
         
         //меняем цвет машин, создать класс для смены через приложение
-        slider.tintColor = [UIColor magentaColor];
+        //slider.tintColor = [UIColor magentaColor];
         
-        [slider setThumbImage:imageView.image forState:UIControlStateNormal];
+        [slider setThumbImage:originalImage forState:UIControlStateNormal];
         
         self.checkRepeatNumberOfCar = self.numberOfCar;
         
