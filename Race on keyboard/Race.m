@@ -29,7 +29,6 @@
                                                                 forKey:NSFontAttributeName];
     Text *makeText = [[Text alloc] init];
     NSString *text = [makeText russianText];
-//    @"Трудно, даже невозможно описать, как зарождаются разные слухи.";
     slider.maximumValue = text.length;
     self.now = [[NSMutableAttributedString alloc]initWithString:text attributes:attrsDictionary ];
     textView.font = [UIFont systemFontOfSize:20];

@@ -31,7 +31,7 @@
     self.raceProperty = [[Race alloc] init];
     self.makeCar = [[CarsChoiseAndColors alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
-    self.progressRace.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.7 alpha:0.03];
+    self.progressRace.backgroundColor = [UIColor colorWithRed:0 green:0.7 blue:0 alpha:0.03];
     [self setupMoreSlider];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.progressRace];
     self.progressRace.value = 0;
@@ -40,12 +40,13 @@
 
 -(void)setupSider:(UISlider *)slider{
 
-    [self.makeCar changeCarsColor:slider];
+    NSLog(@"setup");
+    slider.tintColor = [UIColor redColor];
     slider.minimumTrackTintColor = [UIColor clearColor];
     slider.maximumTrackTintColor = [UIColor clearColor];
     slider.userInteractionEnabled = NO;
     slider.value = 0;
-    
+        [self.makeCar changeCarsColor:slider];
 }
 
 -(void)setupMoreSlider{

@@ -14,7 +14,6 @@
 @property (assign , nonatomic) NSInteger checkRepeatNumberOfCarTwice;
 @property (assign, nonatomic) NSInteger checkAboutRepeat;
 @property (assign , nonatomic) NSInteger numberOfCar;
-@property (nonatomic) UIImageView *imageView;
 
 @end
 
@@ -22,18 +21,22 @@
 
 -(UIImage *)changeCarsColor:(UISlider *)slider{
     
+    UIImageView *imageView = [UIImageView new];
+    
     self.numberOfCar = arc4random_uniform(10) + 1;
     NSLog(@"random%ld", (long)self.numberOfCar);
     
+    // проверка на совпадение 1 и 2 машины
     if (self.numberOfCar != self.checkRepeatNumberOfCar && self.numberOfCar != self.checkRepeatNumberOfCarTwice) {
         
-            UIImage *originalImage = [UIImage imageNamed:[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar]];
-            UIImage *tintedImage = [originalImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            self.imageView = [[UIImageView alloc] initWithImage:tintedImage];
+        UIImage *originalImage = [UIImage imageNamed:[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar]];
+        UIImage *tintedImage = [originalImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        imageView = [[UIImageView alloc] initWithImage:tintedImage];
         
-            self.imageView.tintColor = [UIColor redColor];
+        //меняем цвет машин, создать класс для смены через приложение
+        slider.tintColor = [UIColor magentaColor];
         
-        [slider setThumbImage:self.imageView.image forState:UIControlStateNormal];
+        [slider setThumbImage:imageView.image forState:UIControlStateNormal];
         
         self.checkRepeatNumberOfCar = self.numberOfCar;
         
@@ -45,12 +48,7 @@
         [self changeCarsColor:slider];
     }
     
-//    UIImage *originalImage = [UIImage imageNamed:[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar]];
-//    UIImage *tintedImage = [originalImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:tintedImage];
-//    
-//    imageView.tintColor = [UIColor blueColor];
-    return self.imageView.image;
+    return imageView.image;
 }
 
 
