@@ -23,7 +23,7 @@
     
     UIImageView *imageView = [UIImageView new];
     
-    self.numberOfCar = arc4random_uniform(3) + 1;
+    self.numberOfCar = arc4random_uniform(10) + 1;
     NSLog(@"random%ld", (long)self.numberOfCar);
     
     // проверка на совпадение 1 и 2 машины
