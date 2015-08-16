@@ -7,12 +7,12 @@
 //
 
 #import "CarsCollection.h"
+#import "CarSelect.h"
 
 @interface CarsCollection ()
 
 @property (assign , nonatomic) NSInteger checkRepeatFirstAndSecondCar;
-@property (assign , nonatomic) NSInteger checkRepeatSecondAndThird;
-@property (assign, nonatomic) NSInteger  checkAboutRepeat;
+@property (assign, nonatomic)  NSInteger checkAboutRepeat;
 @property (assign , nonatomic) NSInteger numberOfCar;
 
 @end
@@ -28,26 +28,28 @@
 
 //  проверка, чтобы машинки не попадались одинаковые
 -(void)changeCarsColor:(UISlider *)slider{
+    CarSelect* car = [CarSelect new];
     
     self.numberOfCar = arc4random_uniform([self quantityOfCar]) + 1;
-    NSLog(@"random%ld", (long)self.numberOfCar);
     
-    // проверка на совпадение 1 и 2 машины
-    if (self.numberOfCar != self.checkRepeatFirstAndSecondCar && self.numberOfCar != self.checkRepeatSecondAndThird) {
-                
-        [slider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"car%ld.png", self.numberOfCar]] forState:UIControlStateNormal];
-        
-        self.checkRepeatFirstAndSecondCar = self.numberOfCar;
-        
-        //сравнение первой и третьей машинки
-        if (self.checkAboutRepeat < 1) {
-            self.checkAboutRepeat++;
-            self.checkRepeatSecondAndThird = self.numberOfCar;
-        }
-    }else{
+    //проверка на совпадение с машинкой игрока
+    if ([[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar] isEqualToString:[car loadFromFile]]) {
         [self changeCarsColor:slider];
+    }else{
+        // проверка на совпадение 2 и 3 машины
+        if (self.numberOfCar == self.checkRepeatFirstAndSecondCar) {
+            
+            [self changeCarsColor:slider];
+        }
+        else{
+            [slider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar]] forState:UIControlStateNormal];
+            self.checkRepeatFirstAndSecondCar = self.numberOfCar;
+            
+        }
     }
 }
 
 
 @end
+
+

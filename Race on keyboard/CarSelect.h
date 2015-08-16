@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayerCarChooseViewController : UIViewController
+@interface CarSelect : UIViewController
 
 - (NSString*)loadFromFile;
 

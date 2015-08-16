@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Player Car Choose View Controller-->
+        <!--Car Select-->
         <scene sceneID="mOY-v7-OAF">
             <objects>
-                <viewController id="Zat-3d-y5r" customClass="PlayerCarChooseViewController" sceneMemberID="viewController">
+                <viewController id="Zat-3d-y5r" customClass="CarSelect" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CLT-Uy-wT2"/>
                         <viewControllerLayoutGuide type="bottom" id="njT-Uu-rzS"/>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="aw3-6p-ES7"/>
                     <connections>
                         <outlet property="view" destination="I2C-6f-C44" id="V4G-az-NJU"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="dVN-SA-nKI"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="2" id="dVN-SA-nKI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBV-dd-PHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,6 +54,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raG-Kj-P8D" userLabel="playerSlider">
+                                <rect key="frame" x="14" y="58" width="292" height="31"/>
+                                <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc" userLabel="firstOpponent">
+                                <rect key="frame" x="14" y="88" width="292" height="31"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-af-FjE" userLabel="secondOpponent">
+                                <rect key="frame" x="14" y="118" width="292" height="31"/>
+                            </slider>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMn-E2-r5l" userLabel="Enter Race Text View">
                                 <rect key="frame" x="21" y="216" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -62,18 +72,6 @@
                                     <action selector="touchOnEnterRaceTextFieldEnded:" destination="BYZ-38-t0r" eventType="editingChanged" id="meF-V9-Xfi"/>
                                 </connections>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc">
-                                <rect key="frame" x="14" y="96" width="292" height="31"/>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="raG-Kj-P8D">
-                                <rect key="frame" x="14" y="58" width="292" height="31"/>
-                                <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
-                            </slider>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="textView" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
-                                <rect key="frame" x="16" y="216" width="288" height="100"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqs-ox-Ngs">
                                 <rect key="frame" x="258" y="20" width="50" height="30"/>
                                 <state key="normal" title="Restart">
@@ -83,18 +81,20 @@
                                     <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nIn-8K-OKE"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-af-FjE">
-                                <rect key="frame" x="14" y="134" width="292" height="31"/>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-N1-ikq">
                                 <rect key="frame" x="16" y="20" width="79" height="30"/>
                                 <state key="normal" title="Choose car">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Zat-3d-y5r" kind="show" id="OMb-He-PpM"/>
+                                    <segue destination="Zat-3d-y5r" kind="show" identifier="1" id="OMb-He-PpM"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="textView" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
+                                <rect key="frame" x="16" y="181" width="288" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

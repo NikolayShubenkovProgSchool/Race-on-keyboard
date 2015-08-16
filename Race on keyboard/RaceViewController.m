@@ -9,7 +9,7 @@
 #import "RaceViewController.h"
 #import "Race.h"
 #import "CarsCollection.h"
-#import "PlayerCarChooseViewController.h"
+#import "CarSelect.h"
 
 @interface RaceViewController ()
 
@@ -37,6 +37,7 @@
     self.makeCar = [[CarsCollection alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
     self.playerProgressRaceSlider.backgroundColor = [UIColor colorWithRed:0 green:0.7 blue:0 alpha:0.03];
+
     [self setupMoreSlider];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
     self.playerProgressRaceSlider.value = 0;
@@ -47,21 +48,36 @@
 
     NSLog(@"setup");
     slider.minimumTrackTintColor = [UIColor clearColor];
-    slider.maximumTrackTintColor = [UIColor clearColor];
+//    slider.maximumTrackTintColor = [UIColor clearColor];
     slider.userInteractionEnabled = NO;
     slider.value = 0;
-    [self.makeCar changeCarsColor:slider];
+    
+
+}
+
+-(void)playerSliderSetup{
+    
+    CarSelect* car = [CarSelect new];
+    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
+    NSLog(@"машинка игрока установлена");
+    [self setupSider:self.playerProgressRaceSlider];
+    
 }
 
 -(void)setupMoreSlider{
-    PlayerCarChooseViewController* car = [PlayerCarChooseViewController new];
-    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
-    NSLog(@"my car %@", [NSString stringWithFormat:@"%@", [car loadFromFile]]);
+//    CarSelect* car = [CarSelect new];
+//    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
+//    NSLog(@"машинка игрока установлена");
+//    [self setupSider:self.playerProgressRaceSlider];
+    [self playerSliderSetup];
     
     NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
 
     for (id n in sliders) {
         [self setupSider:n];
+        [self.makeCar changeCarsColor:n];
+        NSLog(@"бот настроен");
+
     }
     
 }
@@ -71,10 +87,10 @@
     [self setup];
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self setup];
-}
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    [self setup];
+//}
 
 #pragma mark - check and play
 
