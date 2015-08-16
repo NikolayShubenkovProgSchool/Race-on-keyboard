@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Выбери свою машину " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZBY-Id-ILI">
-                                <rect key="frame" x="8" y="72" width="305" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Выбери свою машину " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZBY-Id-ILI">
+                                <rect key="frame" x="8" y="30" width="305" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NqN-zN-x5K"/>
                                     <constraint firstAttribute="width" constant="305" id="PgG-8Y-VH5"/>
@@ -28,7 +28,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZBY-Id-ILI" firstAttribute="top" secondItem="CLT-Uy-wT2" secondAttribute="bottom" constant="8" id="XBo-Kc-Akh"/>
+                            <constraint firstItem="ZBY-Id-ILI" firstAttribute="top" secondItem="CLT-Uy-wT2" secondAttribute="bottom" constant="10" id="XBo-Kc-Akh"/>
                             <constraint firstAttribute="centerX" secondItem="ZBY-Id-ILI" secondAttribute="centerX" constant="-0.5" id="qBj-so-2Mf"/>
                         </constraints>
                     </view>
