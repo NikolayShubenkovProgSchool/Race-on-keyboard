@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zat-3d-y5r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xjh-2B-wMs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Car Select-->
+        <!--Выбери свою машину-->
         <scene sceneID="mOY-v7-OAF">
             <objects>
                 <viewController id="Zat-3d-y5r" customClass="CarSelect" sceneMemberID="viewController">
@@ -15,32 +15,51 @@
                     <view key="view" contentMode="scaleToFill" id="I2C-6f-C44">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Выбери свою машину " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZBY-Id-ILI">
-                                <rect key="frame" x="8" y="30" width="305" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="NqN-zN-x5K"/>
-                                    <constraint firstAttribute="width" constant="305" id="PgG-8Y-VH5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZBY-Id-ILI" firstAttribute="top" secondItem="CLT-Uy-wT2" secondAttribute="bottom" constant="10" id="XBo-Kc-Akh"/>
-                            <constraint firstAttribute="centerX" secondItem="ZBY-Id-ILI" secondAttribute="centerX" constant="-0.5" id="qBj-so-2Mf"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aw3-6p-ES7"/>
+                    <navigationItem key="navigationItem" title="Выбери свою машину" id="aw3-6p-ES7"/>
                     <connections>
                         <outlet property="view" destination="I2C-6f-C44" id="V4G-az-NJU"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="2" id="dVN-SA-nKI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBV-dd-PHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="315"/>
+            <point key="canvasLocation" x="1912" y="315"/>
+        </scene>
+        <!--Traffic One Two Three View Controller-->
+        <scene sceneID="seK-5E-jwH">
+            <objects>
+                <viewController storyboardIdentifier="trafficOneTwoThreeViewController" id="QAB-yb-UZb" customClass="trafficOneTwoThreeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hYp-vu-QYn"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Ae-Ei-50y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ed2-lP-ifU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCb-1h-SeC">
+                                <rect key="frame" x="85" y="159" width="150" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Ihx-hS-Jrm"/>
+                                    <constraint firstAttribute="height" constant="250" id="iU3-31-oA0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="tCb-1h-SeC" secondAttribute="centerY" id="4zh-tp-jJK"/>
+                            <constraint firstAttribute="centerX" secondItem="tCb-1h-SeC" secondAttribute="centerX" id="Jit-7H-BQb"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="tCb-1h-SeC" id="4W9-1N-qew"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olB-e4-oAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="-317"/>
         </scene>
         <!--RaceViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -59,10 +78,10 @@
                                 <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="0.0" colorSpace="deviceRGB"/>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-cm-Xcc" userLabel="firstOpponent">
-                                <rect key="frame" x="14" y="88" width="292" height="31"/>
+                                <rect key="frame" x="14" y="96" width="292" height="31"/>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-af-FjE" userLabel="secondOpponent">
-                                <rect key="frame" x="14" y="118" width="292" height="31"/>
+                                <rect key="frame" x="14" y="134" width="292" height="31"/>
                             </slider>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMn-E2-r5l" userLabel="Enter Race Text View">
                                 <rect key="frame" x="21" y="216" width="97" height="30"/>
@@ -72,6 +91,11 @@
                                     <action selector="touchOnEnterRaceTextFieldEnded:" destination="BYZ-38-t0r" eventType="editingChanged" id="meF-V9-Xfi"/>
                                 </connections>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="textView" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
+                                <rect key="frame" x="16" y="221" width="288" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqs-ox-Ngs">
                                 <rect key="frame" x="258" y="20" width="50" height="30"/>
                                 <state key="normal" title="Restart">
@@ -87,14 +111,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Zat-3d-y5r" kind="show" identifier="1" id="OMb-He-PpM"/>
+                                    <segue destination="Xjh-2B-wMs" kind="show" identifier="1" id="OMb-He-PpM"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="textView" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-EV-tbm" userLabel="Race Text View">
-                                <rect key="frame" x="16" y="181" width="288" height="100"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -111,7 +130,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="315"/>
+            <point key="canvasLocation" x="2401" y="315"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wqG-Rq-Qm6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xjh-2B-wMs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5PG-wz-a05">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zat-3d-y5r" kind="relationship" relationship="rootViewController" id="9It-gT-F9I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4PL-mk-y6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="315"/>
         </scene>
     </scenes>
 </document>

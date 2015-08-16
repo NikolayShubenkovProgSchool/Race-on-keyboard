@@ -64,7 +64,7 @@
     }
     
     if ([textField.text isEqual:[textView.text substringWithRange:self.range]]) {
-        [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:self.range];
+        [self.now addAttribute:NSBackgroundColorAttributeName value:[UIColor colorWithRed:89/255.0 green:188/255.0 blue:227/255.0 alpha:1] range:self.range];
         textView.attributedText = self.now;
         textField.text = @"";
         self.countOfTouchOnKeyboard++;

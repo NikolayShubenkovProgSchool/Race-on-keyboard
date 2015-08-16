@@ -41,14 +41,14 @@
     [self setupMoreSlider];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
     self.playerProgressRaceSlider.value = 0;
-    
+    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
 }
 
 -(void)setupSider:(UISlider *)slider{
 
     NSLog(@"setup");
     slider.minimumTrackTintColor = [UIColor clearColor];
-//    slider.maximumTrackTintColor = [UIColor clearColor];
+    slider.maximumTrackTintColor = [UIColor clearColor];
     slider.userInteractionEnabled = NO;
     slider.value = 0;
     
@@ -61,7 +61,6 @@
     [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
     NSLog(@"машинка игрока установлена");
     [self setupSider:self.playerProgressRaceSlider];
-    
 }
 
 -(void)setupMoreSlider{

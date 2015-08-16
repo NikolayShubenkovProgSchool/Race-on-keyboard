@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		700B8DC11B7FC73700496B49 /* CarSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B8DC01B7FC73700496B49 /* CarSelect.m */; };
+		703322B31B81228B00808A01 /* trafficOneTwoThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703322B21B81228B00808A01 /* trafficOneTwoThreeViewController.m */; };
 		703B73061B7E2CEE00D7AEEB /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 703B73051B7E2CEE00D7AEEB /* Text.m */; };
 		70BF2E9B1B7A294D00831C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2E9A1B7A294D00831C6C /* main.m */; };
 		70BF2E9E1B7A294D00831C6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BF2E9D1B7A294D00831C6C /* AppDelegate.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		700B8DBF1B7FC73700496B49 /* CarSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarSelect.h; sourceTree = "<group>"; };
 		700B8DC01B7FC73700496B49 /* CarSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarSelect.m; sourceTree = "<group>"; };
+		703322B11B81228B00808A01 /* trafficOneTwoThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trafficOneTwoThreeViewController.h; sourceTree = "<group>"; };
+		703322B21B81228B00808A01 /* trafficOneTwoThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trafficOneTwoThreeViewController.m; sourceTree = "<group>"; };
 		703B73041B7E2CEE00D7AEEB /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		703B73051B7E2CEE00D7AEEB /* Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		70BF2E951B7A294D00831C6C /* Race on keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Race on keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +129,8 @@
 				70BF2EC21B7D061800831C6C /* Race.m */,
 				703B73041B7E2CEE00D7AEEB /* Text.h */,
 				703B73051B7E2CEE00D7AEEB /* Text.m */,
+				703322B11B81228B00808A01 /* trafficOneTwoThreeViewController.h */,
+				703322B21B81228B00808A01 /* trafficOneTwoThreeViewController.m */,
 				700B8DC21B8089CC00496B49 /* CarSelection */,
 				70BF2EA51B7A294D00831C6C /* Images.xcassets */,
 				70BF2EA71B7A294D00831C6C /* LaunchScreen.xib */,
@@ -262,6 +267,7 @@
 			files = (
 				70E95BC71B7F711B00B678FB /* CarsCollection.m in Sources */,
 				70BF2EC31B7D061800831C6C /* Race.m in Sources */,
+				703322B31B81228B00808A01 /* trafficOneTwoThreeViewController.m in Sources */,
 				70BF2EA11B7A294D00831C6C /* ViewController.m in Sources */,
 				703B73061B7E2CEE00D7AEEB /* Text.m in Sources */,
 				70BF2EC01B7A2B9400831C6C /* RaceViewController.m in Sources */,

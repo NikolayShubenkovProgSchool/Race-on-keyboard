@@ -9,6 +9,7 @@
 #import "CarSelect.h"
 #import "CarsCollection.h"
 #import "RaceViewController.h"
+#import "trafficOneTwoThreeViewController.h"
 
 @interface CarSelect ()
 
@@ -22,9 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self listOfCarToSelect];
-    //    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87/255.0 green:176/255.0 blue:255/255.0 alpha:1];
+    [self setup];
+
 }
 
+-(void)setup{
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
+
+}
 
 //создаем два столбика со всеми машинами для выбора машины игрока
 -(void)listOfCarToSelect{
@@ -69,7 +77,7 @@
     }
 }
 
-
+#pragma mark - go to another view
 //выбираем машинку по нажатию и переходим на окно с гонкой
 - (void)buttonPressed:(UIButton *)button {
     self.note = [NSString stringWithFormat:@"%@", button.currentTitle];
@@ -77,7 +85,7 @@
     [self saveToFile];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    RaceViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"RaceViewController"];
+    trafficOneTwoThreeViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"trafficOneTwoThreeViewController"];
     [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
     
     [self presentViewController:rvc animated:YES completion:nil];
