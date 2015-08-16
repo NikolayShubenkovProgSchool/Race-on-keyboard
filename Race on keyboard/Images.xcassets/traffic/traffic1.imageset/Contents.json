@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "road.png"
+      "filename" : "traffic1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "road@2x.png"
+      "filename" : "traffic1@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "road@3x.png"
+      "filename" : "traffic1@3x.png"
     }
   ],
   "info" : {
