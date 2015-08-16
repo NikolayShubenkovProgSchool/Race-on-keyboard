@@ -10,4 +10,7 @@
 
 @interface PlayerCarChooseViewController : UIViewController
 
+- (NSString*)loadFromFile;
+
+
 @end

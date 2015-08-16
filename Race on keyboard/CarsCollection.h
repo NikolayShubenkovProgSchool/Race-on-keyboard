@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CarsChoiseAndColors : UIView
+@interface CarsCollection : UIView
 
--(UIImage *)changeCarsColor:(UISlider *)slider;
+-(void)changeCarsColor:(UISlider *)slider;
+-(int)quantityOfCar;
 
 @end

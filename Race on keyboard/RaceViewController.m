@@ -8,36 +8,38 @@
 
 #import "RaceViewController.h"
 #import "Race.h"
-#import "CarsChoiseAndColors.h"
+#import "CarsCollection.h"
+#import "PlayerCarChooseViewController.h"
 
 @interface RaceViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITextField *enterRaceTextField;
-@property (weak, nonatomic) IBOutlet UISlider *progressRace;
 @property (weak, nonatomic) IBOutlet UISlider *opponentSliderOne;
 @property (weak, nonatomic) IBOutlet UISlider *opponentSliderTwo;
+@property (weak, nonatomic) IBOutlet UISlider *playerProgressRaceSlider;
 
 @property (nonatomic) Race* raceProperty;
-@property (nonatomic) CarsChoiseAndColors* makeCar;
+@property (nonatomic) CarsCollection* makeCar;
 
 @end
 
 @implementation RaceViewController
 
 #pragma mark - setup
+
 - (IBAction)restart:(id)sender {
     [self setup];
 }
 
 -(void)setup{
     self.raceProperty = [[Race alloc] init];
-    self.makeCar = [[CarsChoiseAndColors alloc] init];
+    self.makeCar = [[CarsCollection alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
-    self.progressRace.backgroundColor = [UIColor colorWithRed:0 green:0.7 blue:0 alpha:0.03];
+    self.playerProgressRaceSlider.backgroundColor = [UIColor colorWithRed:0 green:0.7 blue:0 alpha:0.03];
     [self setupMoreSlider];
-    [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.progressRace];
-    self.progressRace.value = 0;
+    [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
+    self.playerProgressRaceSlider.value = 0;
     
 }
 
@@ -48,12 +50,15 @@
     slider.maximumTrackTintColor = [UIColor clearColor];
     slider.userInteractionEnabled = NO;
     slider.value = 0;
-        [self.makeCar changeCarsColor:slider];
+    [self.makeCar changeCarsColor:slider];
 }
 
 -(void)setupMoreSlider{
+    PlayerCarChooseViewController* car = [PlayerCarChooseViewController new];
+    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
+    NSLog(@"my car %@", [NSString stringWithFormat:@"%@", [car loadFromFile]]);
     
-    NSArray *sliders = [[NSArray alloc] initWithObjects:self.progressRace, self.opponentSliderOne, self.opponentSliderTwo, nil];
+    NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
 
     for (id n in sliders) {
         [self setupSider:n];
@@ -62,8 +67,12 @@
 }
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
+    [self setup];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     [self setup];
 }
 
@@ -71,7 +80,7 @@
 
 - (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
-    [self.raceProperty edittingLetter:self.progressRace and:self.textView :self.enterRaceTextField];
+    [self.raceProperty edittingLetter:self.playerProgressRaceSlider and:self.textView :self.enterRaceTextField];
 
 }
 
