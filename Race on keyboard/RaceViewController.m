@@ -10,7 +10,8 @@
 #import "Race.h"
 #import "CarsCollection.h"
 #import "CarSelect.h"
-#import "YouWinYouLoseViewController.h"
+#import "YouWinViewController.h"
+#import "YouLoseViewController.h"
 #import "BotView.h"
 #import "trafficOneTwoThreeViewController.h"
 
@@ -33,15 +34,6 @@
 
 #pragma mark - setup
 
-- (IBAction)restart:(id)sender {
-
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    RaceViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"RaceViewController"];
-//    [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
-//    
-//    [self presentViewController:rvc animated:NO completion:nil];
-}
-
 -(void)setup{
     self.raceProperty = [[Race alloc] init];
     self.makeCar = [[CarsCollection alloc] init];
@@ -51,7 +43,6 @@
     [self setupMoreSlider];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
     self.playerProgressRaceSlider.value = 0;
-
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
 }
 
@@ -62,8 +53,6 @@
     slider.maximumTrackTintColor = [UIColor clearColor];
     slider.userInteractionEnabled = NO;
     slider.value = 0;
-    
-
 }
 
 -(void)playerSliderSetup{
@@ -111,14 +100,22 @@
                   afterDelay:0.5];
     }
     if (self.opponentSliderOne.value == self.opponentSliderOne.maximumValue || self.opponentSliderTwo.value == self.opponentSliderTwo.maximumValue) {
-        [self youWin];
+        [self youLose];
     }
 
 }
 
 -(void)youWin{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    YouWinYouLoseViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"YouWinYouLoseViewController"];
+    YouWinViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"YouWinViewController"];
+    [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
+    
+    [self presentViewController:rvc animated:NO completion:nil];
+}
+
+-(void)youLose{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YouLoseViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"YouLoseViewController"];
     [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
     
     [self presentViewController:rvc animated:NO completion:nil];

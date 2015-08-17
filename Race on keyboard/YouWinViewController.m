@@ -6,27 +6,20 @@
 //  Copyright (c) 2015 Semen Matsepura. All rights reserved.
 //
 
-#import "YouWinYouLoseViewController.h"
+#import "YouWinViewController.h"
 
-@interface YouWinYouLoseViewController ()
+@interface YouWinViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 
 @end
 
-@implementation YouWinYouLoseViewController
+@implementation YouWinViewController
 
 -(void)youWinGame{
-    
     self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"win.png"]];
     self.imageView.image = [self.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.imageView setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
-}
-
--(void)youGameIsOver{
-    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gameover.png"]];
-    self.imageView.image = [self.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.imageView setTintColor:[UIColor colorWithRed:204/255.0 green:51/255.0 blue:51/255.0 alpha:1]];
 }
 
 -(void)setup{

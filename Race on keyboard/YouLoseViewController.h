@@ -1,5 +1,5 @@
 //
-//  YouWinYouLoseViewController.h
+//  YouLoseViewController.h
 //  Race on keyboard
 //
 //  Created by Semen on 17.08.15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YouWinYouLoseViewController : UIViewController
+@interface YouLoseViewController : UIViewController
 
 @end

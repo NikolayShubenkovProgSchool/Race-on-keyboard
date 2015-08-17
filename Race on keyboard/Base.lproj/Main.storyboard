@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="1846" y="315"/>
         </scene>
-        <!--You Win You Lose View Controller-->
+        <!--You Win View Controller-->
         <scene sceneID="AKQ-h9-nEu">
             <objects>
-                <viewController storyboardIdentifier="YouWinYouLoseViewController" id="VSF-g8-VPo" customClass="YouWinYouLoseViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YouWinViewController" id="VSF-g8-VPo" customClass="YouWinViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cix-3y-ShF"/>
                         <viewControllerLayoutGuide type="bottom" id="mXd-7i-47B"/>
@@ -46,8 +46,8 @@
                                     <constraint firstAttribute="width" constant="150" id="tS3-bz-R0q"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myW-cl-yjg">
-                                <rect key="frame" x="137" y="467" width="50" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myW-cl-yjg">
+                                <rect key="frame" x="135" y="461" width="50" height="30"/>
                                 <state key="normal" title="Restart">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -59,18 +59,67 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Jzq-PU-tYc" secondAttribute="centerX" id="3Z1-5l-oie"/>
+                            <constraint firstAttribute="centerX" secondItem="myW-cl-yjg" secondAttribute="centerX" id="Hpb-VV-8JI"/>
+                            <constraint firstItem="myW-cl-yjg" firstAttribute="top" secondItem="Jzq-PU-tYc" secondAttribute="bottom" constant="52" id="iPa-ns-Nfb"/>
                             <constraint firstAttribute="centerY" secondItem="Jzq-PU-tYc" secondAttribute="centerY" id="wT7-QC-prR"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="imageView" destination="Jzq-PU-tYc" id="j9e-Wf-jMn"/>
-                        <outlet property="restartButton" destination="myW-cl-yjg" id="Ror-YG-mh0"/>
+                        <outlet property="restartButton" destination="myW-cl-yjg" id="hiW-n6-piu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5R-5c-agw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2466" y="-317"/>
+        </scene>
+        <!--You Lose View Controller-->
+        <scene sceneID="CDD-sp-6u5">
+            <objects>
+                <viewController storyboardIdentifier="YouLoseViewController" id="CKv-YE-sAx" customClass="YouLoseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QyL-0F-fad"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ts8-6m-OBT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Ff-kU-q18">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OQD-Rd-uJR">
+                                <rect key="frame" x="85" y="159" width="150" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="aRa-Wa-usA"/>
+                                    <constraint firstAttribute="width" constant="150" id="kP3-f2-A0V"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuO-4n-mko">
+                                <rect key="frame" x="135" y="461" width="50" height="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ZxR-Xs-97m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="HuO-4n-mko" secondAttribute="centerX" id="3qX-NG-wtd"/>
+                            <constraint firstItem="HuO-4n-mko" firstAttribute="top" secondItem="OQD-Rd-uJR" secondAttribute="bottom" constant="52" id="GPV-O0-oF3"/>
+                            <constraint firstAttribute="centerY" secondItem="OQD-Rd-uJR" secondAttribute="centerY" id="UGf-q2-C5P"/>
+                            <constraint firstAttribute="centerX" secondItem="OQD-Rd-uJR" secondAttribute="centerX" id="mu6-6z-HG0"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="OQD-Rd-uJR" id="fCw-6b-GY0"/>
+                        <outlet property="restartButton" destination="HuO-4n-mko" id="mee-Xi-36e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHd-Ev-bkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2924" y="-317"/>
         </scene>
         <!--Traffic One Two Three View Controller-->
         <scene sceneID="seK-5E-jwH">
@@ -148,7 +197,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nIn-8K-OKE"/>
                                     <segue destination="QAB-yb-UZb" kind="show" id="GmJ-nU-lY7"/>
                                 </connections>
                             </button>
@@ -198,4 +246,7 @@
             <point key="canvasLocation" x="1380" y="315"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="F62-BO-TrK"/>
+    </inferredMetricsTieBreakers>
 </document>

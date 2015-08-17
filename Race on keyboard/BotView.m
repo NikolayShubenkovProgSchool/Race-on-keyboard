@@ -7,7 +7,7 @@
 //
 
 #import "BotView.h"
-#import "YouWinYouLoseViewController.h"
+#import "YouWinViewController.h"
 
 @implementation BotView
 
