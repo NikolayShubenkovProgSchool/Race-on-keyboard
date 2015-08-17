@@ -10,4 +10,6 @@
 
 @interface trafficOneTwoThreeViewController : UIViewController
 
+-(void)goRace;
+
 @end

@@ -24,7 +24,7 @@
 }
 
 -(void)youGameIsOver{
-    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gameover"]];
+    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"gameover.png"]];
     self.imageView.image = [self.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.imageView setTintColor:[UIColor colorWithRed:204/255.0 green:51/255.0 blue:51/255.0 alpha:1]];
 }
@@ -33,12 +33,6 @@
     [self.restartButton setTintColor:[UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1]];
         [self youWinGame];
 }
-
-//-(void)viewDidDisappear:(BOOL)animated{
-//    [super viewDidDisappear:animated];
-//    [super viewDidLoad];
-//    [self youWinGame];
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

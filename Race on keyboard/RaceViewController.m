@@ -11,6 +11,8 @@
 #import "CarsCollection.h"
 #import "CarSelect.h"
 #import "YouWinYouLoseViewController.h"
+#import "BotView.h"
+#import "trafficOneTwoThreeViewController.h"
 
 @interface RaceViewController ()
 
@@ -22,6 +24,8 @@
 
 @property (nonatomic) Race* raceProperty;
 @property (nonatomic) CarsCollection* makeCar;
+@property (nonatomic) BotView* bot;
+@property (nonatomic) trafficOneTwoThreeViewController* goRace;
 
 @end
 
@@ -30,18 +34,24 @@
 #pragma mark - setup
 
 - (IBAction)restart:(id)sender {
-    [self setup];
+
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    RaceViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"RaceViewController"];
+//    [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
+//    
+//    [self presentViewController:rvc animated:NO completion:nil];
 }
 
 -(void)setup{
     self.raceProperty = [[Race alloc] init];
     self.makeCar = [[CarsCollection alloc] init];
+    self.bot = [[BotView alloc] init];
     [self.enterRaceTextField becomeFirstResponder];
-    self.playerProgressRaceSlider.backgroundColor = [UIColor colorWithRed:0 green:0.7 blue:0 alpha:0.03];
 
     [self setupMoreSlider];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
     self.playerProgressRaceSlider.value = 0;
+
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
 }
 
@@ -65,10 +75,6 @@
 }
 
 -(void)setupMoreSlider{
-//    CarSelect* car = [CarSelect new];
-//    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
-//    NSLog(@"машинка игрока установлена");
-//    [self setupSider:self.playerProgressRaceSlider];
     [self playerSliderSetup];
     
     NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
@@ -81,10 +87,17 @@
     }
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.bot setEasyBotByTimer:self.opponentSliderOne];
+    [self.bot setEasyBotByTimer:self.opponentSliderTwo];
+    NSLog(@"wiilappear");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
+    NSLog(@"didload");
 }
 
 #pragma mark - check and play
@@ -96,6 +109,9 @@
        [self performSelector:@selector(youWin)
                   withObject:nil
                   afterDelay:0.5];
+    }
+    if (self.opponentSliderOne.value == self.opponentSliderOne.maximumValue || self.opponentSliderTwo.value == self.opponentSliderTwo.maximumValue) {
+        [self youWin];
     }
 
 }

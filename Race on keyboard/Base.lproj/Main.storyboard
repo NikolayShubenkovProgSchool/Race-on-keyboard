@@ -18,13 +18,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Выбери свою машину" id="aw3-6p-ES7"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="view" destination="I2C-6f-C44" id="V4G-az-NJU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBV-dd-PHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="315"/>
+            <point key="canvasLocation" x="1846" y="315"/>
         </scene>
         <!--You Win You Lose View Controller-->
         <scene sceneID="AKQ-h9-nEu">
@@ -148,6 +149,7 @@
                                 </state>
                                 <connections>
                                     <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nIn-8K-OKE"/>
+                                    <segue destination="QAB-yb-UZb" kind="show" id="GmJ-nU-lY7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-N1-ikq">

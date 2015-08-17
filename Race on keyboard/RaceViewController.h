@@ -11,5 +11,6 @@
 @interface RaceViewController : ViewController
 
 @property (strong, nonatomic) NSString* car;
+-(void)youWin;
 
 @end
