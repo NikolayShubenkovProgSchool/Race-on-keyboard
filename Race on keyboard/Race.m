@@ -9,8 +9,6 @@
 #import "Race.h"
 #import "Text.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "RaceViewController.h"
-#import "YouWinYouLoseViewController.h"
 
 @interface Race ()
 
@@ -23,7 +21,6 @@
 @implementation Race
 
 #pragma mark - setup tex in race
-
 
 -(void)setUpTextInRace:(UITextView *)textView AndMakeMaxValueOfSlider:(UISlider *)slider{
     UIFont *font = [UIFont fontWithName:@"Palatino-Roman" size:19.0];
@@ -39,10 +36,6 @@
     NSLog(@"%@", text);
     
 }
-
-#pragma mark - pictures of car into slider
-
-
 
 #pragma mark - slider progress count
 

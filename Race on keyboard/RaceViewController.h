@@ -10,7 +10,6 @@
 
 @interface RaceViewController : ViewController
 
-
 @property (strong, nonatomic) NSString* car;
 
 @end
