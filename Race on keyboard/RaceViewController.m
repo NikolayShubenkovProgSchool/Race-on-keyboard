@@ -10,6 +10,7 @@
 #import "Race.h"
 #import "CarsCollection.h"
 #import "CarSelect.h"
+#import "YouWinYouLoseViewController.h"
 
 @interface RaceViewController ()
 
@@ -86,17 +87,25 @@
     [self setup];
 }
 
-//-(void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//    [self setup];
-//}
-
 #pragma mark - check and play
 
 - (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
     [self.raceProperty edittingLetter:self.playerProgressRaceSlider and:self.textView :self.enterRaceTextField];
+    if (self.playerProgressRaceSlider.value == self.playerProgressRaceSlider.maximumValue) {
+       [self performSelector:@selector(youWin)
+                  withObject:nil
+                  afterDelay:0.5];
+    }
 
+}
+
+-(void)youWin{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YouWinYouLoseViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"YouWinYouLoseViewController"];
+    [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
+    
+    [self presentViewController:rvc animated:NO completion:nil];
 }
 
 

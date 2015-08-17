@@ -9,6 +9,8 @@
 #import "Race.h"
 #import "Text.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "RaceViewController.h"
+#import "YouWinYouLoseViewController.h"
 
 @interface Race ()
 
@@ -74,7 +76,7 @@
         textView.attributedText = self.now;
         textField.text = @"";
         //вибрация при неправильном вводе буквы
-        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
 }
 

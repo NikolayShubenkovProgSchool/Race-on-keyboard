@@ -18,8 +18,6 @@
 
 @implementation trafficOneTwoThreeViewController
 
-
-
 -(void)countingOneTwoThree{
     self.a = 3;
     [self colorOfTrafficRed];
@@ -55,7 +53,6 @@
     [self performSelector:@selector(goRace)
                withObject:nil
                afterDelay:0.5];
-
 }
 
 -(void)counting{
@@ -63,6 +60,7 @@
     self.a--;
 }
 
+// переход на вьюху с гонкой
 -(void)goRace{
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -71,8 +69,9 @@
         
         [self presentViewController:rvc animated:NO completion:nil];
     }
-
 }
+
+
 
 - (void)viewDidLoad {
     [self countingOneTwoThree];

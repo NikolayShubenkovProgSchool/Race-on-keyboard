@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700820431B81D3E300C8F85C /* YouWinYouLoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700820421B81D3E300C8F85C /* YouWinYouLoseViewController.m */; };
 		700B8DC11B7FC73700496B49 /* CarSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 700B8DC01B7FC73700496B49 /* CarSelect.m */; };
 		703322B31B81228B00808A01 /* trafficOneTwoThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703322B21B81228B00808A01 /* trafficOneTwoThreeViewController.m */; };
 		703B73061B7E2CEE00D7AEEB /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 703B73051B7E2CEE00D7AEEB /* Text.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		700820411B81D3E300C8F85C /* YouWinYouLoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouWinYouLoseViewController.h; sourceTree = "<group>"; };
+		700820421B81D3E300C8F85C /* YouWinYouLoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouWinYouLoseViewController.m; sourceTree = "<group>"; };
 		700B8DBF1B7FC73700496B49 /* CarSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarSelect.h; sourceTree = "<group>"; };
 		700B8DC01B7FC73700496B49 /* CarSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarSelect.m; sourceTree = "<group>"; };
 		703322B11B81228B00808A01 /* trafficOneTwoThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trafficOneTwoThreeViewController.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				70BF2EC21B7D061800831C6C /* Race.m */,
 				703B73041B7E2CEE00D7AEEB /* Text.h */,
 				703B73051B7E2CEE00D7AEEB /* Text.m */,
+				700820411B81D3E300C8F85C /* YouWinYouLoseViewController.h */,
+				700820421B81D3E300C8F85C /* YouWinYouLoseViewController.m */,
 				703322B11B81228B00808A01 /* trafficOneTwoThreeViewController.h */,
 				703322B21B81228B00808A01 /* trafficOneTwoThreeViewController.m */,
 				700B8DC21B8089CC00496B49 /* CarSelection */,
@@ -265,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700820431B81D3E300C8F85C /* YouWinYouLoseViewController.m in Sources */,
 				70E95BC71B7F711B00B678FB /* CarsCollection.m in Sources */,
 				70BF2EC31B7D061800831C6C /* Race.m in Sources */,
 				703322B31B81228B00808A01 /* trafficOneTwoThreeViewController.m in Sources */,

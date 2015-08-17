@@ -12,9 +12,9 @@
 
 -(NSString *)russianText{
     
-    NSArray *text = [NSArray arrayWithObjects:@"Трудно, даже невозможно описать, как зарождаются разные слухи.", nil];
+    NSArray *text = [NSArray arrayWithObjects:@"Трудно, даже невозможно описать, как зарождаются разные слухи.",@"123", nil];
     
-    return [text objectAtIndex:arc4random_uniform(1)];
+    return [text objectAtIndex:arc4random_uniform(2)];
 }
 
 
