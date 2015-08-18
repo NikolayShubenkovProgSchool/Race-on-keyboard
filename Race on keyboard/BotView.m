@@ -19,7 +19,7 @@
 
 // задаем время ботам
 -(NSInteger)setRandomValue{
-    self.randomValue = 25 + arc4random_uniform(25);
+    self.randomValue = 37 + arc4random_uniform(20);
     NSLog(@"RANDOM VALUE IS %ld", (long)self.randomValue);
     return self.randomValue;
 }

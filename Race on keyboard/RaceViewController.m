@@ -34,8 +34,35 @@
 
 #pragma mark - setup
 
--(void)customizeViewOfSider:(UISlider *)slider{
+-(void)customizeTextView{
+    CALayer *layer = self.textView.layer;
+    
+    //Сделаем отсутпы по краям от текста
+//    [self.textView setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
+    
+    [self.textView layoutIfNeeded];
+    
+    //Закруглим края
+    CGRect frame = self.textView.frame;
+    
+    //половина высоты кнопки -> получим овал;
+    CGFloat radious = CGRectGetHeight(frame) / 7;
+    layer.cornerRadius = radious;
+    
+    
+    //Обведем кнопку
+    layer.borderColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1].CGColor;
+    layer.borderWidth = 3;
+    
+    
+//    layer.shadowColor   = [UIColor greenColor].CGColor;
+//    layer.shadowOffset  = CGSizeMake(0, 0);
+//    layer.shadowRadius  = 3;
+//    layer.shadowOpacity = 0.8;
+}
 
+-(void)customizeViewOfSider:(UISlider *)slider{
+    
     NSLog(@"setup");
     slider.minimumTrackTintColor = [UIColor clearColor];
     slider.maximumTrackTintColor = [UIColor clearColor];
@@ -43,8 +70,7 @@
     slider.value = 0;
 }
 
--(void)customizePlayerSlider{
-    
+-(void)customizePlayerSlider{    
     CarSelect* car = [CarSelect new];
     [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
     NSLog(@"машинка игрока установлена");
@@ -76,6 +102,7 @@
 }
 
 -(void)setup{
+    [self customizeTextView];
     self.raceProperty = [[Race alloc] init];
     self.makeCar = [[CarsCollection alloc] init];
     self.bot = [[BotView alloc] init];
