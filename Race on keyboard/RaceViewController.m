@@ -35,11 +35,11 @@
 #pragma mark - setup
 
 -(void)customizeTextView{
-//    [self.textView setTextAlignment:NSTextAlignmentCenter];
+    //    [self.textView setTextAlignment:NSTextAlignmentCenter];
     CALayer *layer = self.textView.layer;
     
     //Сделаем отсутпы по краям от текста
-//    [self.textView setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
+    //    [self.textView setContentEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
     
     [self.textView layoutIfNeeded];
     
@@ -54,12 +54,6 @@
     //Обведем кнопку
     layer.borderColor = [UIColor colorWithRed:62/255.0 green:180/255.0 blue:137/255.0 alpha:1].CGColor;
     layer.borderWidth = 3;
-    
-    
-//    layer.shadowColor   = [UIColor greenColor].CGColor;
-//    layer.shadowOffset  = CGSizeMake(0, 0);
-//    layer.shadowRadius  = 3;
-//    layer.shadowOpacity = 0.8;
 }
 
 -(void)customizeViewOfSider:(UISlider *)slider{
@@ -71,7 +65,7 @@
     slider.value = 0;
 }
 
--(void)customizePlayerSlider{    
+-(void)customizePlayerSlider{
     CarSelect* car = [CarSelect new];
     [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
     NSLog(@"машинка игрока установлена");
@@ -81,7 +75,7 @@
 -(void)customizeOpponentSliders{
     
     NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
-
+    
     for (UISlider* n in sliders) {
         [self customizeViewOfSider:n];
         [self.makeCar changeCarsColor:n];
@@ -90,7 +84,7 @@
         n.maximumValue = self.playerProgressRaceSlider.maximumValue;
         NSLog(@"%f", self.playerProgressRaceSlider.maximumValue);
         NSLog(@"%f", self.opponentSliderOne.maximumValue);
-
+        
         
         NSLog(@"бот настроен");
     }
@@ -111,22 +105,22 @@
     [self.enterRaceTextField becomeFirstResponder];
     [self setupAllSliders];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
-
+    [self.textView setTextAlignment:NSTextAlignmentCenter];
     self.playerProgressRaceSlider.value = 0;
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-        [self setup];
-//    [self.bot setEasyBotByTimer:self.opponentSliderOne];
-//    [self.bot setEasyBotByTimer:self.opponentSliderTwo];
+    [self setup];
+    //    [self.bot setEasyBotByTimer:self.opponentSliderOne];
+    //    [self.bot setEasyBotByTimer:self.opponentSliderTwo];
     NSLog(@"wiilappear");
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     NSLog(@"didload");
 }
 
@@ -135,15 +129,16 @@
 - (IBAction)touchOnEnterRaceTextFieldEnded:(id)sender {
     
     [self.raceProperty edittingLetter:self.playerProgressRaceSlider and:self.textView :self.enterRaceTextField];
+    [self.textView setTextAlignment:NSTextAlignmentCenter];
     if (self.playerProgressRaceSlider.value == self.playerProgressRaceSlider.maximumValue) {
-       [self performSelector:@selector(youWin)
-                  withObject:nil
-                  afterDelay:0.5];
+        [self performSelector:@selector(youWin)
+                   withObject:nil
+                   afterDelay:0.5];
     }
     if (self.opponentSliderOne.value == self.opponentSliderOne.maximumValue || self.opponentSliderTwo.value == self.opponentSliderTwo.maximumValue) {
         [self youLose];
     }
-
+    
 }
 
 #pragma  mark - you win / you lose
