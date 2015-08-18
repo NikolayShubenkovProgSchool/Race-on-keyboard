@@ -52,7 +52,6 @@
 }
 
 -(void)customizeOpponentSliders{
-//    [self playerSliderSetup];
     
     NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
 
@@ -61,11 +60,10 @@
         [self.makeCar changeCarsColor:n];
         [self.bot setEasyBotByTimer:n];
         
-#warning разобрать тут!
         n.maximumValue = self.playerProgressRaceSlider.maximumValue;
         NSLog(@"%f", self.playerProgressRaceSlider.maximumValue);
         NSLog(@"%f", self.opponentSliderOne.maximumValue);
-#warning разобрать тут!        
+
         
         NSLog(@"бот настроен");
     }
