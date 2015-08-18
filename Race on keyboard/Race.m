@@ -32,6 +32,7 @@
     self.now = [[NSMutableAttributedString alloc]initWithString:text attributes:attrsDictionary ];
     textView.font = [UIFont systemFontOfSize:20];
     textView.attributedText = self.now ;
+    [textView setTextAlignment:NSTextAlignmentCenter];
     
     NSLog(@"%@", text);
     

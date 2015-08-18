@@ -35,6 +35,7 @@
 #pragma mark - setup
 
 -(void)customizeTextView{
+//    [self.textView setTextAlignment:NSTextAlignmentCenter];
     CALayer *layer = self.textView.layer;
     
     //Сделаем отсутпы по краям от текста
@@ -110,6 +111,7 @@
     [self.enterRaceTextField becomeFirstResponder];
     [self setupAllSliders];
     [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
+
     self.playerProgressRaceSlider.value = 0;
     self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
 }
