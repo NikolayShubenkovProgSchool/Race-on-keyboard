@@ -97,6 +97,8 @@
 		7008204A1B82630700C8F85C /* WinLose */ = {
 			isa = PBXGroup;
 			children = (
+				700820441B823F2300C8F85C /* BotView.h */,
+				700820451B823F2300C8F85C /* BotView.m */,
 				700820471B8262FE00C8F85C /* YouLoseViewController.h */,
 				700820481B8262FE00C8F85C /* YouLoseViewController.m */,
 				700820411B81D3E300C8F85C /* YouWinViewController.h */,
@@ -145,8 +147,6 @@
 				70BF2EA21B7A294D00831C6C /* Main.storyboard */,
 				70BF2EBE1B7A2B9400831C6C /* RaceViewController.h */,
 				70BF2EBF1B7A2B9400831C6C /* RaceViewController.m */,
-				700820441B823F2300C8F85C /* BotView.h */,
-				700820451B823F2300C8F85C /* BotView.m */,
 				70BF2EC11B7D061800831C6C /* Race.h */,
 				70BF2EC21B7D061800831C6C /* Race.m */,
 				703B73041B7E2CEE00D7AEEB /* Text.h */,

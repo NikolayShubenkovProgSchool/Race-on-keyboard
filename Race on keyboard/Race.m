@@ -40,9 +40,9 @@
 #pragma mark - slider progress count
 
 -(void)makeProgressBySlider:(UISlider *)slider and:(UITextView *)textView{
-    if (slider.value == slider.maximumValue - 1) {
-        textView.text = @"You win!";
-    }
+//    if (slider.value == slider.maximumValue - 1) {
+//        textView.text = @"You win!";
+//    }
     [UIView animateWithDuration:1.0 animations:^{
         [slider setValue:self.countOfTouchOnKeyboard animated:YES];
     }];

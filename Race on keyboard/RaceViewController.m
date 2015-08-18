@@ -34,19 +34,7 @@
 
 #pragma mark - setup
 
--(void)setup{
-    self.raceProperty = [[Race alloc] init];
-    self.makeCar = [[CarsCollection alloc] init];
-    self.bot = [[BotView alloc] init];
-    [self.enterRaceTextField becomeFirstResponder];
-
-    [self setupMoreSlider];
-    [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
-    self.playerProgressRaceSlider.value = 0;
-    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
-}
-
--(void)setupSider:(UISlider *)slider{
+-(void)customizeViewOfSider:(UISlider *)slider{
 
     NSLog(@"setup");
     slider.minimumTrackTintColor = [UIColor clearColor];
@@ -55,37 +43,63 @@
     slider.value = 0;
 }
 
--(void)playerSliderSetup{
+-(void)customizePlayerSlider{
     
     CarSelect* car = [CarSelect new];
     [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
     NSLog(@"машинка игрока установлена");
-    [self setupSider:self.playerProgressRaceSlider];
+    [self customizeViewOfSider:self.playerProgressRaceSlider];
 }
 
--(void)setupMoreSlider{
-    [self playerSliderSetup];
+-(void)customizeOpponentSliders{
+//    [self playerSliderSetup];
     
     NSArray *sliders = [[NSArray alloc] initWithObjects: self.opponentSliderOne, self.opponentSliderTwo, nil];
 
-    for (id n in sliders) {
-        [self setupSider:n];
+    for (UISlider* n in sliders) {
+        [self customizeViewOfSider:n];
         [self.makeCar changeCarsColor:n];
+        [self.bot setEasyBotByTimer:n];
+        
+#warning разобрать тут!
+        n.maximumValue = self.playerProgressRaceSlider.maximumValue;
+        NSLog(@"%f", self.playerProgressRaceSlider.maximumValue);
+        NSLog(@"%f", self.opponentSliderOne.maximumValue);
+#warning разобрать тут!        
+        
         NSLog(@"бот настроен");
-
     }
+}
+
+-(void)setupAllSliders{
+    [self customizePlayerSlider];
+    [self customizeOpponentSliders];
     
 }
+
+-(void)setup{
+    self.raceProperty = [[Race alloc] init];
+    self.makeCar = [[CarsCollection alloc] init];
+    self.bot = [[BotView alloc] init];
+    
+    [self.enterRaceTextField becomeFirstResponder];
+    [self setupAllSliders];
+    [self.raceProperty setUpTextInRace:self.textView AndMakeMaxValueOfSlider:self.playerProgressRaceSlider];
+    self.playerProgressRaceSlider.value = 0;
+    self.view.backgroundColor = [UIColor colorWithRed:127/255.0 green:181/255.0 blue:181/255.0 alpha:1];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.bot setEasyBotByTimer:self.opponentSliderOne];
-    [self.bot setEasyBotByTimer:self.opponentSliderTwo];
+        [self setup];
+//    [self.bot setEasyBotByTimer:self.opponentSliderOne];
+//    [self.bot setEasyBotByTimer:self.opponentSliderTwo];
     NSLog(@"wiilappear");
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setup];
+
     NSLog(@"didload");
 }
 
@@ -104,6 +118,8 @@
     }
 
 }
+
+#pragma  mark - you win / you lose
 
 -(void)youWin{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
