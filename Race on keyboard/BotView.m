@@ -42,8 +42,4 @@
     NSLog(@"max value work and max value is %f", maxSlider.maximumValue);
 }
 
--(void)couintingOfText{
-    
-}
-
 @end

@@ -33,7 +33,7 @@
     self.numberOfCar = arc4random_uniform([self quantityOfCar]) + 1;
     
     //проверка на совпадение с машинкой игрока
-    if ([[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar] isEqualToString:[car loadFromFile]]) {
+    if ([[NSString stringWithFormat:@"car%ld.png", (long)self.numberOfCar] isEqualToString:[car loadFromUserDefaults]]) {
         [self changeCarsColor:slider];
     }else{
         // проверка на совпадение 2 и 3 машины

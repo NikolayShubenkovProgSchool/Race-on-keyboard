@@ -27,7 +27,7 @@
     NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
                                                                 forKey:NSFontAttributeName];
     Text *makeText = [[Text alloc] init];
-    NSString *text = [makeText russianText];
+    NSString *text = [makeText text];
     slider.maximumValue = text.length;
     self.now = [[NSMutableAttributedString alloc]initWithString:text attributes:attrsDictionary ];
     textView.font = [UIFont systemFontOfSize:20];

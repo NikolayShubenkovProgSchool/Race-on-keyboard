@@ -10,7 +10,7 @@
 
 @interface CarSelect : UIViewController
 
-- (NSString*)loadFromFile;
+-(NSString *)loadFromUserDefaults;
 
 
 @end

@@ -67,7 +67,7 @@
 
 -(void)customizePlayerSlider{
     CarSelect* car = [CarSelect new];
-    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromFile]]] forState:UIControlStateNormal];
+    [self.playerProgressRaceSlider setThumbImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ ", [car loadFromUserDefaults]]] forState:UIControlStateNormal];
     NSLog(@"машинка игрока установлена");
     [self customizeViewOfSider:self.playerProgressRaceSlider];
 }

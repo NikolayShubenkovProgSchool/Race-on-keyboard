@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="guN-fp-DnU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jVB-8m-T5v">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Выбери свою машину-->
         <scene sceneID="mOY-v7-OAF">
             <objects>
-                <viewController id="Zat-3d-y5r" customClass="CarSelect" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarSelect" id="Zat-3d-y5r" customClass="CarSelect" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CLT-Uy-wT2"/>
                         <viewControllerLayoutGuide type="bottom" id="njT-Uu-rzS"/>
@@ -25,7 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBV-dd-PHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="315"/>
+            <point key="canvasLocation" x="2466" y="377"/>
         </scene>
         <!--You Win View Controller-->
         <scene sceneID="AKQ-h9-nEu">
@@ -191,15 +191,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqs-ox-Ngs">
-                                <rect key="frame" x="258" y="20" width="50" height="30"/>
-                                <state key="normal" title="Restart">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="QAB-yb-UZb" kind="show" id="GmJ-nU-lY7"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-N1-ikq">
                                 <rect key="frame" x="16" y="20" width="79" height="30"/>
                                 <state key="normal" title="Choose car">
@@ -209,9 +200,19 @@
                                     <segue destination="Zat-3d-y5r" kind="show" id="AVU-qE-TAG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-SG-DVj">
+                                <rect key="frame" x="258" y="20" width="39" height="30"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Pns-pQ-CZg" kind="show" id="AcV-Q4-tpK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Xki-td-06P"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -252,6 +253,9 @@
                                 <state key="normal" title="Setting">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="SfX-CW-CYA" kind="show" id="VsI-O4-gQc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM5-e9-QLR">
                                 <rect key="frame" x="110" y="354" width="100" height="60"/>
@@ -272,30 +276,90 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNn-t9-GRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1930" y="315"/>
+            <point key="canvasLocation" x="2050" y="377"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="NP4-C8-GWS">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="SfX-CW-CYA" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yT9-ch-9dR"/>
+                        <viewControllerLayoutGuide type="bottom" id="yIf-pQ-1gM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lnq-fu-1C2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-AO-mlj">
+                                <rect key="frame" x="70" y="139" width="181" height="29"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Русский"/>
+                                    <segment title="Английский"/>
+                                </segments>
+                                <connections>
+                                    <action selector="textLanguageSegmentedControl:" destination="SfX-CW-CYA" eventType="valueChanged" id="1ba-jG-L0s"/>
+                                </connections>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Текущий автомобиль" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4T8-FF-Yju">
+                                <rect key="frame" x="70" y="202" width="181" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Выберите язык текста для ввода" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiC-nA-ucr">
+                                <rect key="frame" x="70" y="72" width="181" height="59"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE6-X5-aF8">
+                                <rect key="frame" x="125" y="331" width="71" height="30"/>
+                                <state key="normal" title="Поменять">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Zat-3d-y5r" kind="show" id="KIO-b2-7SW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textLanguage" destination="H8g-AO-mlj" id="ClJ-NC-fiE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKm-sV-Itn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2050" y="1080"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="7a5-gc-rPx">
+        <scene sceneID="4qS-re-gdk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="guN-fp-DnU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jVB-8m-T5v" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ljj-hU-hDT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m1C-dk-TIC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Pns-pQ-CZg" kind="relationship" relationship="rootViewController" id="rz1-89-zg1"/>
+                        <segue destination="Pns-pQ-CZg" kind="relationship" relationship="rootViewController" id="Ndh-7L-Oo5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Btz-Kw-W2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8QB-AP-vhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1402" y="315"/>
+            <point key="canvasLocation" x="1650" y="377"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="s71-MQ-8s9"/>
-        <segue reference="ZxR-Xs-97m"/>
+        <segue reference="AVU-qE-TAG"/>
+        <segue reference="F62-BO-TrK"/>
+        <segue reference="AcV-Q4-tpK"/>
     </inferredMetricsTieBreakers>
 </document>

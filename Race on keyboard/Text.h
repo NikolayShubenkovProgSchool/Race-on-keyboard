@@ -10,6 +10,7 @@
 
 @interface Text : NSObject
 
--(NSString *)russianText;
+-(NSString *)text;
+
 
 @end
