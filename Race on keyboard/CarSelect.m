@@ -20,8 +20,8 @@
 
 @implementation CarSelect
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self listOfCarToSelect];
     [self setup];
     
@@ -86,7 +86,8 @@
     trafficOneTwoThreeViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"trafficOneTwoThreeViewController"];
     [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
     
-    [self presentViewController:rvc animated:YES completion:nil];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:rvc];
+    [self presentViewController:nvc animated:YES completion:nil];
     
 }
 

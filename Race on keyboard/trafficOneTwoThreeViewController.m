@@ -66,7 +66,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         RaceViewController *rvc = [storyboard instantiateViewControllerWithIdentifier:@"RaceViewController"];
         [rvc setModalPresentationStyle:UIModalPresentationFullScreen];
-        
+//        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:rvc];
         [self presentViewController:rvc animated:NO completion:nil];
     }
 }
