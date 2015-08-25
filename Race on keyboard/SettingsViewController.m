@@ -8,7 +8,6 @@
 
 #import "SettingsViewController.h"
 #import "CarSelect.h"
-#import "CarSelect.h"
 
 @interface SettingsViewController ()
 

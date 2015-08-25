@@ -118,11 +118,11 @@
     NSLog(@"wiilappear");
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    NSLog(@"didload");
-}
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+//    
+//    NSLog(@"didload");
+//}
 
 #pragma mark - check and play
 
