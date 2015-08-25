@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Выбери свою машину-->
+        <!--Select car-->
         <scene sceneID="mOY-v7-OAF">
             <objects>
                 <viewController storyboardIdentifier="CarSelect" id="Zat-3d-y5r" customClass="CarSelect" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Выбери свою машину" id="aw3-6p-ES7"/>
+                    <navigationItem key="navigationItem" title="Select car" id="aw3-6p-ES7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="view" destination="I2C-6f-C44" id="V4G-az-NJU"/>
@@ -197,7 +197,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Pns-pQ-CZg" kind="show" id="AcV-Q4-tpK"/>
+                                    <segue destination="jVB-8m-T5v" kind="show" id="Qqo-tW-PKZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-N1-ikq">
@@ -227,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="2059" y="-317"/>
         </scene>
-        <!--Меню-->
+        <!--Menu-->
         <scene sceneID="swk-lI-Hfd">
             <objects>
                 <viewController id="Pns-pQ-CZg" customClass="MenuViewController" sceneMemberID="viewController">
@@ -269,7 +269,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Меню" id="yP1-Is-3Bu"/>
+                    <navigationItem key="navigationItem" title="Menu" id="yP1-Is-3Bu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="aboutButon" destination="yM5-e9-QLR" id="p8N-Lt-oAb"/>
@@ -294,33 +294,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-AO-mlj">
-                                <rect key="frame" x="70" y="139" width="181" height="29"/>
+                                <rect key="frame" x="70" y="154" width="181" height="29"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <segments>
-                                    <segment title="Русский"/>
-                                    <segment title="Английский"/>
+                                    <segment title="Russian"/>
+                                    <segment title="English"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="textLanguageSegmentedControl:" destination="SfX-CW-CYA" eventType="valueChanged" id="1ba-jG-L0s"/>
                                 </connections>
                             </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Текущий автомобиль" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4T8-FF-Yju">
-                                <rect key="frame" x="70" y="202" width="181" height="50"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Current car" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4T8-FF-Yju">
+                                <rect key="frame" x="16" y="243" width="288" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Выберите язык текста для ввода" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiC-nA-ucr">
-                                <rect key="frame" x="70" y="72" width="181" height="59"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Select language of race's text" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiC-nA-ucr">
+                                <rect key="frame" x="16" y="94" width="288" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE6-X5-aF8">
-                                <rect key="frame" x="125" y="331" width="71" height="30"/>
-                                <state key="normal" title="Поменять">
+                                <rect key="frame" x="133" y="303" width="54" height="30"/>
+                                <state key="normal" title="Change">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -328,11 +329,37 @@
                                     <segue destination="Zat-3d-y5r" kind="show" id="KIO-b2-7SW"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Select difficulty of bot" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-ix-asX">
+                                <rect key="frame" x="16" y="370" width="288" height="39"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAP-4S-IoL">
+                                <rect key="frame" x="115" y="243" width="90" height="90"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Zat-3d-y5r" kind="show" id="IRQ-oa-X62"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-JY-8Z3">
+                                <rect key="frame" x="72" y="430" width="176" height="29"/>
+                                <segments>
+                                    <segment title="Easy"/>
+                                    <segment title="Normal"/>
+                                    <segment title="Hard"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="carButton" destination="QAP-4S-IoL" id="wiV-Wv-KZV"/>
                         <outlet property="textLanguage" destination="H8g-AO-mlj" id="ClJ-NC-fiE"/>
                     </connections>
                 </viewController>
@@ -352,7 +379,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="designed by Freepik.com" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="nst-yK-v9o">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="designed by Freepik.com" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nst-yK-v9o">
                                 <rect key="frame" x="16" y="455" width="288" height="93"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -389,8 +416,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ndh-7L-Oo5"/>
-        <segue reference="KIO-b2-7SW"/>
-        <segue reference="ZxR-Xs-97m"/>
+        <segue reference="AVU-qE-TAG"/>
+        <segue reference="F62-BO-TrK"/>
     </inferredMetricsTieBreakers>
 </document>
