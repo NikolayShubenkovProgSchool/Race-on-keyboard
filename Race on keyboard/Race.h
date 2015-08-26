@@ -10,8 +10,8 @@
 
 @interface Race : UIView
 
--(void)makeProgressBySlider:(UISlider *)slider and:(UITextView *)textView;
--(void)edittingLetter:(UISlider *)slider and:(UITextView *)textView :(UITextField *)textField;
--(void)setUpTextInRace:(UITextView *)textView AndMakeMaxValueOfSlider:(UISlider *)slider;
+-(void)makeProgressBySlider:(UISlider *)slider and:(UILabel *)textView;
+-(void)edittingLetter:(UISlider *)slider and:(UILabel *)textView :(UITextField *)textField;
+-(void)setUpTextInRace:(UILabel *)textView AndMakeMaxValueOfSlider:(UISlider *)slider;
 
 @end

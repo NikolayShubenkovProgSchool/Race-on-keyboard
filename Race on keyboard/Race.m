@@ -22,7 +22,7 @@
 
 #pragma mark - setup tex in race
 
--(void)setUpTextInRace:(UITextView *)textView AndMakeMaxValueOfSlider:(UISlider *)slider{
+-(void)setUpTextInRace:(UILabel *)textView AndMakeMaxValueOfSlider:(UISlider *)slider{
     UIFont *font = [UIFont fontWithName:@"Palatino-Roman" size:19.0];
     NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
                                                                 forKey:NSFontAttributeName];
@@ -39,7 +39,7 @@
 
 #pragma mark - slider progress count
 
--(void)makeProgressBySlider:(UISlider *)slider and:(UITextView *)textView{
+-(void)makeProgressBySlider:(UISlider *)slider and:(UILabel *)textView{
 //    if (slider.value == slider.maximumValue - 1) {
 //        textView.text = @"You win!";
 //    }
@@ -48,7 +48,7 @@
     }];
 }
 
--(void)edittingLetter:(UISlider *)slider and:(UITextView *)textView :(UITextField *)textField{
+-(void)edittingLetter:(UISlider *)slider and:(UILabel *)textView :(UITextField *)textField{
     
     NSLog(@"touch ended on keyboard %ld", (long)self.countOfTouchOnKeyboard);
     self.range = NSMakeRange(0+self.countOfTouchOnKeyboard, 1);

@@ -17,7 +17,7 @@
 
 @interface RaceViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *textView;
 @property (weak, nonatomic) IBOutlet UITextField *enterRaceTextField;
 @property (weak, nonatomic) IBOutlet UISlider *opponentSliderOne;
 @property (weak, nonatomic) IBOutlet UISlider *opponentSliderTwo;
